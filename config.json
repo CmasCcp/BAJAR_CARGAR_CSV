@@ -1,0 +1,73 @@
+[
+    {
+        "proyecto": 12,
+        "codigo_interno": "AIRE-01"
+    },
+    {
+        "proyecto": 12,
+        "codigo_interno": "AIRE-02",
+        "ultima_fecha": "2025-10-28"
+    },
+    {
+        "proyecto": 12,
+        "codigo_interno": "AIRE-03",
+        "ultima_fecha": "2025-10-28"
+    },
+    {
+        "proyecto": 12,
+        "codigo_interno": "AIRE-04",
+        "ultima_fecha": "2025-10-28"
+    },
+    {
+        "proyecto": 12,
+        "codigo_interno": "AIRE-05",
+        "ultima_fecha": "2025-10-28"
+    },
+    {
+        "proyecto": 12,
+        "codigo_interno": "AIRE-06",
+        "ultima_fecha": "2025-10-28"
+    },
+    {
+        "proyecto": 13,
+        "codigo_interno": "AGUA-00"
+    },
+    {
+        "proyecto": 13,
+        "codigo_interno": "AGUA-01",
+        "ultima_fecha": "2046-01-08"
+    },
+    {
+        "proyecto": 13,
+        "codigo_interno": "AGUA-02",
+        "ultima_fecha": "2025-10-28"
+    },
+    {
+        "proyecto": 14,
+        "codigo_interno": "LVAG-00"
+    },
+    {
+        "proyecto": 14,
+        "codigo_interno": "LVAG-01"
+    },
+    {
+        "proyecto": 14,
+        "codigo_interno": "LVAG-02",
+        "ultima_fecha": "2025-10-28"
+    },
+    {
+        "proyecto": 14,
+        "codigo_interno": "LVAG-03",
+        "ultima_fecha": "2025-10-27"
+    },
+    {
+        "proyecto": 14,
+        "codigo_interno": "LVAG-04",
+        "ultima_fecha": "2025-10-28"
+    },
+    {
+        "proyecto": 14,
+        "codigo_interno": "LVAG-05",
+        "ultima_fecha": "2025-10-27"
+    }
+]
