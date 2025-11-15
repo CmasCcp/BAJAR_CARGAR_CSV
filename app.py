@@ -45,7 +45,7 @@ def obtener_ultima_fecha_csv(codigo_interno, datos_folder):
                 
                 # Buscar columnas que puedan contener fechas
                 columnas_fecha = [col for col in df.columns if any(palabra in col.lower() 
-                                for palabra in ['fecha', 'date', 'time', 'timestamp'])]
+                                for palabra in ['fecha_insercion'])]
                 
                 if columnas_fecha:
                     # Usar la primera columna de fecha encontrada
@@ -97,11 +97,15 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
             codigo_interno = dispositivo['codigo_interno']
             
             # Crear carpeta específica del proyecto
-            proyecto_folder = os.path.join(output_folder, str(proyecto))
-            os.makedirs(proyecto_folder, exist_ok=True)
+            proyecto_folder = os.path.join(output_folder, f"proyecto_{proyecto}")
+            
+            # Crear carpeta del dispositivo dentro del proyecto  
+            dispositivo_folder = os.path.join(proyecto_folder, codigo_interno)
+            os.makedirs(dispositivo_folder, exist_ok=True)
             
             print(f"\n🔄 [{i+1}/{len(dispositivos)}] Procesando {codigo_interno} (Proyecto {proyecto})...")
             print(f"📁 Carpeta de proyecto: {proyecto_folder}")
+            print(f"🔧 Carpeta de dispositivo: {dispositivo_folder}")
             
             # Determinar fecha de inicio
             fecha_inicio = None
@@ -113,8 +117,8 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                 print(f"📅 Última fecha en config: {dispositivo['ultima_fecha']}")
                 print(f"📅 Iniciando desde el día siguiente: {fecha_inicio}")
             else:
-                # 2. Buscar última fecha en archivos CSV existentes en la carpeta del proyecto
-                ultima_fecha_csv = obtener_ultima_fecha_csv(codigo_interno, proyecto_folder)
+                # 2. Buscar última fecha en archivos CSV existentes en la carpeta del dispositivo
+                ultima_fecha_csv = obtener_ultima_fecha_csv(codigo_interno, dispositivo_folder)
                 if ultima_fecha_csv:
                     ultima_fecha = datetime.strptime(ultima_fecha_csv, '%Y-%m-%d')
                     fecha_inicio = (ultima_fecha + timedelta(days=1)).strftime('%Y-%m-%d')
@@ -124,6 +128,11 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                     # 3. Si no hay datos, usar fecha específica: 2025-10-23
                     fecha_inicio = '2005-10-23'
                     print(f"📅 No hay datos previos, iniciando desde: {fecha_inicio}")
+            
+            # Crear carpeta específica para esta fecha de inicio
+            fecha_folder = os.path.join(dispositivo_folder, fecha_inicio)
+            os.makedirs(fecha_folder, exist_ok=True)
+            print(f"📅 Carpeta de fecha: {fecha_folder}")
 
             # Descargar datos en paquetes de 100 registros (para evitar timeouts)
             limite = 100
@@ -142,7 +151,7 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                 # Descargar datos en paquetes hasta que no haya más
                 while True:
                     # Construir URL de la API con paginación y fecha de inicio
-                    api_url = f"https://api-sensores.cmasccp.cl/listarUltimasMediciones?tabla=datos&disp.id_proyecto={proyecto}&limite={limite}&offset={offset}&disp.codigo_interno={codigo_interno}&fecha_inicio={fecha_inicio}&formato=csv"
+                    api_url = f"https://api-sensores.cmasccp.cl/listarUltimasMediciones?tabla=datos&order_by=fecha_insercion&disp.id_proyecto={proyecto}&limite={limite}&offset={offset}&disp.codigo_interno={codigo_interno}&fecha_inicio={fecha_inicio}&formato=csv"
                     
                     print(f"📦 Paquete {offset//limite + 1}: Descargando registros {offset + 1} al {offset + limite}")
                     print(f"🔗 URL: {api_url}")
@@ -229,7 +238,7 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                         filename = f"{codigo_interno}_paquete_{paquete_num:03d}_{timestamp}.csv"
                     
-                    filepath = os.path.join(proyecto_folder, filename)
+                    filepath = os.path.join(fecha_folder, filename)
                     
                     df_paquete.to_csv(filepath, index=False, encoding='utf-8')
                     archivos_creados.append(filename)
