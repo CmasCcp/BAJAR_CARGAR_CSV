@@ -1,4 +1,4 @@
-import pandas as pd
+﻿import pandas as pd
 import os
 import glob
 from datetime import datetime
@@ -168,10 +168,10 @@ class GeneradorPDFDispositivos:
                 
                 # Calcular diferencia en minutos con la fila anterior
                 df_display['diff_insercion_anterior'] = df_display['fecha_insercion_dt'].diff()
-                df_display['⏰ Min. Dif. Inserción'] = df_display['diff_insercion_anterior'].dt.total_seconds() / 60
+                df_display['Min. Dif. Insercion'] = df_display['diff_insercion_anterior'].dt.total_seconds() / 60
                 
                 # Formatear la columna de diferencia
-                df_display['⏰ Min. Dif. Inserción'] = df_display['⏰ Min. Dif. Inserción'].apply(
+                df_display['Min. Dif. Insercion'] = df_display['Min. Dif. Insercion'].apply(
                     lambda x: 'Primera' if pd.isna(x) else f"{x:.1f}"
                 )
                 
@@ -179,9 +179,9 @@ class GeneradorPDFDispositivos:
                 
             except Exception as e:
                 print(f"⚠️ Error calculando diferencias temporales fecha_insercion: {e}")
-                df_display['⏰ Min. Dif. Inserción'] = 'N/A'
+                df_display['Min. Dif. Insercion'] = 'N/A'
         else:
-            df_display['⏰ Min. Dif. Inserción'] = 'N/A'
+            df_display['Min. Dif. Insercion'] = 'N/A'
         
         # Calcular diferencias para fecha de medición
         if 'fecha' in df_display.columns:
@@ -192,10 +192,10 @@ class GeneradorPDFDispositivos:
                 
                 # Calcular diferencia en minutos con la fila anterior
                 df_display['diff_fecha_anterior'] = df_display['fecha_dt'].diff()
-                df_display['📊 Min. Dif. Medicion'] = df_display['diff_fecha_anterior'].dt.total_seconds() / 60
+                df_display[' Min. Dif. Medicion'] = df_display['diff_fecha_anterior'].dt.total_seconds() / 60
                 
                 # Formatear la columna de diferencia
-                df_display['📊 Min. Dif. Medicion'] = df_display['📊 Min. Dif. Medicion'].apply(
+                df_display[' Min. Dif. Medicion'] = df_display[' Min. Dif. Medicion'].apply(
                     lambda x: 'Primera' if pd.isna(x) else f"{x:.1f}"
                 )
                 
@@ -203,9 +203,9 @@ class GeneradorPDFDispositivos:
                 
             except Exception as e:
                 print(f"⚠️ Error calculando diferencias temporales fecha: {e}")
-                df_display['📊 Min. Dif. Medicion'] = 'N/A'
+                df_display[' Min. Dif. Medicion'] = 'N/A'
         else:
-            df_display['📊 Min. Dif. Medicion'] = 'N/A'
+            df_display[' Min. Dif. Medicion'] = 'N/A'
         
         # Calcular diferencias para fecha de medición
         if 'fecha' in df_display.columns:
@@ -216,10 +216,10 @@ class GeneradorPDFDispositivos:
                 
                 # Calcular diferencia en minutos con la fila anterior
                 df_display['diff_fecha_anterior'] = df_display['fecha_dt'].diff()
-                df_display['📊 Min. Dif. Medicion'] = df_display['diff_fecha_anterior'].dt.total_seconds() / 60
+                df_display[' Min. Dif. Medicion'] = df_display['diff_fecha_anterior'].dt.total_seconds() / 60
                 
                 # Formatear la columna de diferencia
-                df_display['📊 Min. Dif. Medicion'] = df_display['📊 Min. Dif. Medicion'].apply(
+                df_display[' Min. Dif. Medicion'] = df_display[' Min. Dif. Medicion'].apply(
                     lambda x: 'Primera' if pd.isna(x) else f"{x:.1f}"
                 )
                 
@@ -227,9 +227,9 @@ class GeneradorPDFDispositivos:
                 
             except Exception as e:
                 print(f"⚠️ Error calculando diferencias temporales fecha: {e}")
-                df_display['📊 Min. Dif. Medicion'] = 'N/A'
+                df_display[' Min. Dif. Medicion'] = 'N/A'
         else:
-            df_display['📊 Min. Dif. Medicion'] = 'N/A'
+            df_display[' Min. Dif. Medicion'] = 'N/A'
         
         # Filtrar columnas no deseadas (agregamos las columnas auxiliares)
         columnas_auxiliares = ['fecha_insercion_dt', 'diff_insercion_anterior', 'fecha_dt', 'diff_fecha_anterior']
@@ -348,8 +348,8 @@ class GeneradorPDFDispositivos:
             return None
         
         # Identificar las columnas de diferencia temporal
-        col_diferencia_insercion = '⏰ Min. Dif. Inserción'
-        col_diferencia_medicion = '📊 Min. Dif. Medicion'
+        col_diferencia_insercion = 'Min. Dif. Insercion'
+        col_diferencia_medicion = 'Min. Dif. Medicion'
         idx_col_diferencia_insercion = None
         idx_col_diferencia_medicion = None
         
@@ -594,16 +594,16 @@ class GeneradorPDFDispositivos:
                 # 6. CLASIFICACIÓN DE CALIDAD
                 if quality_score >= 90:
                     clasificacion = "EXCELENTE"
-                    color_clase = "🟢"
+                    color_clasificacion = colors.green
                 elif quality_score >= 80:
                     clasificacion = "BUENA"
-                    color_clase = "🟡"
+                    color_clasificacion = colors.orange
                 elif quality_score >= 70:
                     clasificacion = "ACEPTABLE"
-                    color_clase = "🟠"
+                    color_clasificacion = colors.goldenrod
                 else:
                     clasificacion = "DEFICIENTE"
-                    color_clase = "🔴"
+                    color_clasificacion = colors.red
                 
                 metricas = {
                     'Variable': col,
@@ -612,7 +612,8 @@ class GeneradorPDFDispositivos:
                     'Estabilidad %': f"{estabilidad:.1f}%",
                     'Continuidad %': f"{continuidad:.1f}%",
                     'Quality Score': f"{quality_score:.1f}%",
-                    'Clasificación': f"{color_clase} {clasificacion}",
+                    'Clasificación': clasificacion,
+                    'Color_Clasificación': color_clasificacion,
                     'N Outliers': f"{len(outliers)}",
                     'Coef. Variación': f"{coef_variacion:.2f}%"
                 }
@@ -637,7 +638,28 @@ class GeneradorPDFDispositivos:
         # Preparar datos
         data = [headers_con_wrap]
         
-        for metrica in metricas_calidad:
+        for i, metrica in enumerate(metricas_calidad):
+            # Crear paragraph con color para la clasificación
+            clasificacion_text = metrica['Clasificación']
+            color_clasificacion = metrica['Color_Clasificación']
+            
+            # Determinar el color HTML
+            if color_clasificacion == colors.green:
+                color_html = 'green'
+            elif color_clasificacion == colors.orange:
+                color_html = 'orange'
+            elif color_clasificacion == colors.goldenrod:
+                color_html = 'goldenrod'
+            elif color_clasificacion == colors.red:
+                color_html = 'red'
+            else:
+                color_html = 'black'
+            
+            clasificacion_paragraph = Paragraph(
+                f'<font color="{color_html}"><b>{clasificacion_text}</b></font>',
+                self.styles['Normal']
+            )
+            
             fila = [
                 self.crear_celda_con_wrap(metrica['Variable'], max_chars=15),
                 self.crear_celda_con_wrap(metrica['Completitud %'], max_chars=10),
@@ -645,7 +667,7 @@ class GeneradorPDFDispositivos:
                 self.crear_celda_con_wrap(metrica['Estabilidad %'], max_chars=10),
                 self.crear_celda_con_wrap(metrica['Continuidad %'], max_chars=10),
                 self.crear_celda_con_wrap(metrica['Quality Score'], max_chars=10),
-                self.crear_celda_con_wrap(metrica['Clasificación'], max_chars=15),
+                clasificacion_paragraph,
                 self.crear_celda_con_wrap(metrica['N Outliers'], max_chars=8),
                 self.crear_celda_con_wrap(metrica['Coef. Variación'], max_chars=10)
             ]
@@ -658,7 +680,7 @@ class GeneradorPDFDispositivos:
         # Crear tabla
         tabla = Table(data, colWidths=[col_width] * num_cols)
         
-        # Estilo de tabla
+        # Estilo de tabla base
         style = [
             ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
             ('BACKGROUND', (0, 0), (-1, 0), colors.orange),
@@ -760,23 +782,23 @@ class GeneradorPDFDispositivos:
         elementos = []
         
         # Título de la sección
-        elementos.append(Paragraph("🚀 DIAGNÓSTICO DEL RENDIMIENTO DEL SISTEMA", self.subtitle_style))
+        elementos.append(Paragraph("DIAGNOSTICO DEL RENDIMIENTO DEL SISTEMA", self.subtitle_style))
         elementos.append(Spacer(1, 10))
         
         # 1. RESUMEN GENERAL DE MEDICIONES
         resumen_text = (
-            f"📊 <b>RESUMEN GENERAL:</b><br/>"
-            f"• Total de días con datos: <b>{metricas_rendimiento['total_dias']}</b><br/>"
-            f"• Total de mediciones: <b>{metricas_rendimiento['total_mediciones']:,}</b><br/>"
-            f"• Promedio de mediciones por día: <b>{metricas_rendimiento['promedio_mediciones_dia']:.1f}</b><br/>"
-            f"• Rango de mediciones diarias: <b>{metricas_rendimiento['min_mediciones_dia']} - {metricas_rendimiento['max_mediciones_dia']}</b>"
+            f"RESUMEN GENERAL:<br/>"
+            f"- Total de días con datos: <b>{metricas_rendimiento['total_dias']}</b><br/>"
+            f"- Total de mediciones: <b>{metricas_rendimiento['total_mediciones']:,}</b><br/>"
+            f"- Promedio de mediciones por día: <b>{metricas_rendimiento['promedio_mediciones_dia']:.1f}</b><br/>"
+            f"- Rango de mediciones diarias: <b>{metricas_rendimiento['min_mediciones_dia']} - {metricas_rendimiento['max_mediciones_dia']}</b>"
         )
         elementos.append(Paragraph(resumen_text, self.info_style))
         elementos.append(Spacer(1, 15))
         
         # 2. TABLA DE ESTADÍSTICAS DE INTERVALOS
         tabla_data = [
-            ['📏 Métrica', '⏰ Intervalos Medición (min)', '📥 Intervalos Inserción (min)']
+            ['Metrica', 'Intervalos Medicion (min)', 'Intervalos Insercion (min)']
         ]
         
         int_med = metricas_rendimiento['intervalos_medicion']
@@ -814,10 +836,10 @@ class GeneradorPDFDispositivos:
         
         # 3. DETALLE POR DÍA (si hay pocos días, mostrar detalle)
         if metricas_rendimiento['total_dias'] <= 10:
-            elementos.append(Paragraph("📅 <b>DETALLE DE MEDICIONES POR DÍA:</b>", self.info_style))
+            elementos.append(Paragraph("DETALLE DE MEDICIONES POR DIA:", self.info_style))
             elementos.append(Spacer(1, 5))
             
-            detalle_data = [['📅 Fecha', '📊 N° Mediciones']]
+            detalle_data = [['Fecha', 'No. Mediciones']]
             for fecha, cantidad in sorted(metricas_rendimiento['mediciones_por_dia_detalle'].items()):
                 detalle_data.append([str(fecha), str(cantidad)])
             
@@ -914,7 +936,7 @@ class GeneradorPDFDispositivos:
         story = []
         
         # TÍTULO PRINCIPAL
-        title = f"📊 REPORTE DE DATOS - {dispositivo_nombre.upper()}"
+        title = f"REPORTE DE DATOS - {dispositivo_nombre.upper()}"
         story.append(Paragraph(title, self.title_style))
         
         # SUBTÍTULO
@@ -933,10 +955,10 @@ class GeneradorPDFDispositivos:
                 fecha_inicial_str = fecha_inicial.strftime('%Y-%m-%d %H:%M:%S')
                 fecha_final_str = fecha_final.strftime('%Y-%m-%d %H:%M:%S')
                 
-                descripcion_text = (f"🔍 <b>Descripción del Dataset:</b><br/>"
-                                  f"📅 <b>Fecha inserción inicial:</b> {fecha_inicial_str}<br/>"
-                                  f"📅 <b>Fecha inserción final:</b> {fecha_final_str}<br/>"
-                                  f"🏷️ <b>Código interno:</b> {dispositivo_nombre}")
+                descripcion_text = (f"<b>Descripción del Dataset:</b><br/>"
+                                  f"<b>Fecha inserción inicial:</b> {fecha_inicial_str}<br/>"
+                                  f"<b>Fecha inserción final:</b> {fecha_final_str}<br/>"
+                                  f"<b>Código interno:</b> {dispositivo_nombre}")
                 story.append(Paragraph(descripcion_text, self.info_style))
                 story.append(Spacer(1, 15))
         
@@ -947,14 +969,14 @@ class GeneradorPDFDispositivos:
             total_registros = sum(info['registros'] for info in info_archivos)
             total_archivos = len(info_archivos)
             
-            resumen_text = (f"📄 <b>{total_archivos}</b> archivos procesados | "
-                          f"📊 <b>{total_registros:,}</b> registros totales | "
-                          f"📅 Carpetas de fechas: <b>{len(set(info['fecha_carpeta'] for info in info_archivos))}</b>")
+            resumen_text = (f"Archivos: <b>{total_archivos}</b> | "
+                          f"Registros: <b>{total_registros:,}</b> | "
+                          f"Fechas: <b>{len(set(info['fecha_carpeta'] for info in info_archivos))}</b>")
             story.append(Paragraph(resumen_text, self.info_style))
             story.append(Spacer(1, 15))
             
             # Tabla de resumen de archivos
-            archivo_data = [['📄 Archivo', '📅 Fecha Carpeta', '📊 Registros']]
+            archivo_data = [['Archivo', 'Fecha Carpeta', 'Registros']]
             for info in info_archivos:
                 archivo_data.append([
                     info['archivo'],
@@ -977,9 +999,9 @@ class GeneradorPDFDispositivos:
             story.append(archivo_table)
             story.append(Spacer(1, 20))
         
-        # MÉTRICAS DE CALIDAD DE DATOS
+        # METRICAS DE CALIDAD DE DATOS
         if not df_datos.empty:
-            story.append(Paragraph("🎯 MÉTRICAS DE CALIDAD DE DATOS", self.subtitle_style))
+            story.append(Paragraph("METRICAS DE CALIDAD DE DATOS", self.subtitle_style))
             story.append(Spacer(1, 10))
             
             # Calcular métricas de calidad
@@ -995,23 +1017,23 @@ class GeneradorPDFDispositivos:
                     
                     # Agregar explicación de las métricas
                     explicacion_calidad = (
-                        "🎯 <b>Métricas de Calidad:</b><br/>"
+                        "<b>Métricas de Calidad:</b><br/>"
                         "• <b>Completitud:</b> % datos válidos (no nulos)<br/>"
                         "• <b>Consistencia:</b> % datos sin outliers (método IQR)<br/>"
                         "• <b>Estabilidad:</b> Baja variabilidad (Coef. Variación &lt;30%)<br/>"
                         "• <b>Continuidad:</b> Regularidad temporal en mediciones<br/>"
                         "• <b>Quality Score:</b> Puntuación general ponderada<br/>"
-                        "🟢 Excelente (≥90%) | 🟡 Buena (≥80%) | 🟠 Aceptable (≥70%) | 🔴 Deficiente (&lt;70%)"
+                        "<font color='green'><b>EXCELENTE</b></font> (≥90%) | <font color='orange'><b>BUENA</b></font> (≥80%) | <font color='goldenrod'><b>ACEPTABLE</b></font> (≥70%) | <font color='red'><b>DEFICIENTE</b></font> (&lt;70%)"
                     )
                     story.append(Paragraph(explicacion_calidad, self.info_style))
                     story.append(Spacer(1, 20))
             else:
-                story.append(Paragraph("⚠️ No se pudieron calcular métricas de calidad", self.info_style))
+                story.append(Paragraph("[ADVERTENCIA] No se pudieron calcular métricas de calidad", self.info_style))
                 story.append(Spacer(1, 15))
         
         # ESTADÍSTICAS DESCRIPTIVAS
         if not df_datos.empty:
-            story.append(Paragraph("📊 ESTADÍSTICAS DESCRIPTIVAS", self.subtitle_style))
+            story.append(Paragraph("ESTADISTICAS DESCRIPTIVAS", self.subtitle_style))
             story.append(Spacer(1, 10))
             
             # Calcular estadísticas para variables numéricas
@@ -1036,7 +1058,7 @@ class GeneradorPDFDispositivos:
         
         # DATOS PRINCIPALES
         if not df_datos.empty:
-            story.append(Paragraph("📋 DATOS COMPLETOS", self.subtitle_style))
+            story.append(Paragraph("DATOS COMPLETOS", self.subtitle_style))
             story.append(Spacer(1, 10))
             
             # Formatear datos
@@ -1085,7 +1107,7 @@ class GeneradorPDFDispositivos:
                 story.append(elemento)
         
         else:
-            story.append(Paragraph("❌ No hay datos disponibles para este dispositivo", self.info_style))
+            story.append(Paragraph("[X] No hay datos disponibles para este dispositivo", self.info_style))
         
         # Construir PDF
         doc.build(story)
@@ -1106,7 +1128,7 @@ class GeneradorPDFDispositivos:
         
         for proyecto_id, dispositivos in estructura.items():
             for dispositivo_nombre, fechas_datos in dispositivos.items():
-                print(f"\n📊 Generando PDF para {dispositivo_nombre} (Proyecto {proyecto_id})...")
+                print(f"\n Generando PDF para {dispositivo_nombre} (Proyecto {proyecto_id})...")
                 
                 # Leer datos del dispositivo
                 df_datos, info_archivos = self.leer_datos_dispositivo(
@@ -1140,3 +1162,4 @@ if __name__ == "__main__":
         print(f"\n📁 Ubicación: {os.path.abspath(generador.pdfs_folder)}")
     else:
         print("\n❌ No se pudieron generar PDFs")
+
