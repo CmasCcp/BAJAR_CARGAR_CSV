@@ -1,0 +1,56 @@
+REPORTE DE UNIFICACIÓN DE DATOS
+Generado: 2025-11-20 09:57:29
+==================================================
+
+PROYECTO 13
+Archivo: proyecto_13_unificado.csv
+Registros: 460
+Archivos procesados: 6
+Dispositivos: 2
+Fechas: 2
+Período: 2025-11-10 00:37:07 → 2025-11-20 00:51:28
+
+Archivos detalle:
+  - AGUA-01/2025-11-10/AGUA-01_paquete_001_20251114.csv (100 registros)
+  - AGUA-01/2025-11-10/AGUA-01_paquete_002_20251116.csv (64 registros)
+  - AGUA-01/2025-11-17/AGUA-01_paquete_001_20251120.csv (69 registros)
+  - AGUA-02/2025-11-10/AGUA-02_paquete_001_20251114.csv (100 registros)
+  - AGUA-02/2025-11-10/AGUA-02_paquete_002_20251116.csv (58 registros)
+  - AGUA-02/2025-11-17/AGUA-02_paquete_001_20251120.csv (69 registros)
+
+------------------------------
+
+PROYECTO 14
+Archivo: proyecto_14_unificado.csv
+Registros: 1,738
+Archivos procesados: 22
+Dispositivos: 4
+Fechas: 2
+Período: 2025-11-10 09:11:59 → 2025-11-19 21:17:41
+
+Archivos detalle:
+  - LVAG-02/2025-11-10/LVAG-02_paquete_001_20251112.csv (100 registros)
+  - LVAG-02/2025-11-10/LVAG-02_paquete_002_20251114.csv (100 registros)
+  - LVAG-02/2025-11-10/LVAG-02_paquete_003_20251116.csv (88 registros)
+  - LVAG-02/2025-11-17/LVAG-02_paquete_001_20251118.csv (100 registros)
+  - LVAG-02/2025-11-17/LVAG-02_paquete_002_20251119.csv (20 registros)
+  - LVAG-03/2025-11-10/LVAG-03_paquete_001_20251111.csv (100 registros)
+  - LVAG-03/2025-11-10/LVAG-03_paquete_002_20251114.csv (100 registros)
+  - LVAG-03/2025-11-10/LVAG-03_paquete_003_20251116.csv (100 registros)
+  - LVAG-03/2025-11-10/LVAG-03_paquete_004_20251116.csv (37 registros)
+  - LVAG-03/2025-11-17/LVAG-03_paquete_001_20251119.csv (100 registros)
+  - LVAG-03/2025-11-17/LVAG-03_paquete_002_20251119.csv (17 registros)
+  - LVAG-04/2025-11-10/LVAG-04_paquete_001_20251111.csv (100 registros)
+  - LVAG-04/2025-11-10/LVAG-04_paquete_002_20251114.csv (100 registros)
+  - LVAG-04/2025-11-10/LVAG-04_paquete_003_20251116.csv (100 registros)
+  - LVAG-04/2025-11-10/LVAG-04_paquete_004_20251116.csv (36 registros)
+  - LVAG-04/2025-11-17/LVAG-04_paquete_001_20251119.csv (100 registros)
+  - LVAG-04/2025-11-17/LVAG-04_paquete_002_20251119.csv (30 registros)
+  - LVAG-05/2025-11-10/LVAG-05_paquete_001_20251112.csv (100 registros)
+  - LVAG-05/2025-11-10/LVAG-05_paquete_002_20251115.csv (100 registros)
+  - LVAG-05/2025-11-10/LVAG-05_paquete_003_20251116.csv (89 registros)
+  - LVAG-05/2025-11-17/LVAG-05_paquete_001_20251119.csv (100 registros)
+  - LVAG-05/2025-11-17/LVAG-05_paquete_002_20251119.csv (21 registros)
+
+------------------------------
+
