@@ -50,6 +50,7 @@ def obtener_ultima_fecha_csv(codigo_interno, datos_folder):
                 if columnas_fecha:
                     # Usar la primera columna de fecha encontrada
                     col_fecha = columnas_fecha[0]
+                    print(col_fecha)
                     df[col_fecha] = pd.to_datetime(df[col_fecha], errors='coerce')
                     fecha_max = df[col_fecha].max()
                     
@@ -215,8 +216,8 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                     paquete_num = offset//limite + 1
                     
                     # Usar la fecha de los datos para el nombre del archivo
-                    if 'fecha' in df_paquete.columns or 'date' in df_paquete.columns:
-                        col_fecha = 'fecha' if 'fecha' in df_paquete.columns else 'date'
+                    if 'fecha_insercion' in df_paquete.columns or 'date' in df_paquete.columns:
+                        col_fecha = 'fecha_insercion' if 'fecha_insercion' in df_paquete.columns else 'date'
                         # Si ya se procesó la fecha anteriormente, usar esa columna
                         if col_fecha in df_paquete.columns and pd.api.types.is_datetime64_any_dtype(df_paquete[col_fecha]):
                             fecha_datos = df_paquete[col_fecha].max()
