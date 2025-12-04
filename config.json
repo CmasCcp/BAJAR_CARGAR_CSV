@@ -2,36 +2,36 @@
     {
         "proyecto": 13,
         "codigo_interno": "AGUA-01",
-        "ultima_fecha": "2025-12-04"
+        "ultima_fecha": "2025-12-04T17:31:30"
     },
     {
         "proyecto": 13,
         "codigo_interno": "AGUA-02",
-        "ultima_fecha": "2025-12-04"
+        "ultima_fecha": "2025-12-04T17:13:49"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-01",
-        "ultima_fecha": "2025-10-24"
+        "ultima_fecha": "2025-10-25"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-02",
-        "ultima_fecha": "2025-12-04"
+        "ultima_fecha": "2025-12-04T09:10:29"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-03",
-        "ultima_fecha": "2025-12-04"
+        "ultima_fecha": "2025-12-04T09:12:50"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-04",
-        "ultima_fecha": "2025-12-04"
+        "ultima_fecha": "2025-12-04T09:06:13"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-05",
-        "ultima_fecha": "2025-12-04"
+        "ultima_fecha": "2025-12-04T09:26:04"
     }
 ]

@@ -1,0 +1,25 @@
+fecha,fecha_insercion,id_sesion,sesion_descripcion,fecha_inicio,ubicacion,id_proyecto,codigo_interno,dispositivo_descripcion,A01NYUB [Distancia (m)],DS3231 [Grados celcius (°C)],Divisor de Voltaje [Voltaje (V)],LIQ-136 [Profundidad (m)],SHT40 [Grados celcius (°C)],SHT40 [Humedad (%)],SIM7600G [Intensidad señal telefónica (Adimensional)]
+2025-12-03T21:56:19,2025-12-04 09:24:25,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,23.25,8.05,14.62,21.35,64.9,31.0
+2025-12-03T22:26:10,2025-12-04 09:24:30,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,22.0,8.05,14.62,20.66,68.12,31.0
+2025-12-03T22:56:03,2025-12-04 09:24:34,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,21.0,8.05,14.62,19.23,72.8,31.0
+2025-12-03T23:25:54,2025-12-04 09:24:38,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,20.0,8.05,14.62,19.0,74.91,31.0
+2025-12-03T23:55:47,2025-12-04 09:24:43,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,19.25,8.05,14.62,18.29,81.55,31.0
+2025-12-04T00:25:40,2025-12-04 09:24:47,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,18.75,8.13,14.62,17.84,81.28,31.0
+2025-12-04T00:55:32,2025-12-04 09:24:51,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,18.0,8.05,14.62,16.44,83.68,31.0
+2025-12-04T01:25:24,2025-12-04 09:24:55,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,17.25,8.05,14.62,16.41,83.9,31.0
+2025-12-04T01:55:15,2025-12-04 09:25:00,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,16.5,8.05,14.62,15.19,89.38,31.0
+2025-12-04T02:25:07,2025-12-04 09:25:04,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,15.75,8.05,14.62,14.79,89.76,31.0
+2025-12-04T02:54:59,2025-12-04 09:25:08,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,15.25,8.05,14.62,14.87,90.0,31.0
+2025-12-04T03:24:52,2025-12-04 09:25:13,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,15.0,8.05,14.62,14.26,92.06,31.0
+2025-12-04T03:54:45,2025-12-04 09:25:17,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,14.75,8.05,14.62,13.94,93.99,31.0
+2025-12-04T04:24:37,2025-12-04 09:25:21,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,14.5,8.05,14.62,14.46,96.02,31.0
+2025-12-04T04:54:29,2025-12-04 09:25:25,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,14.0,8.05,14.62,13.24,96.15,31.0
+2025-12-04T05:24:21,2025-12-04 09:25:30,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,13.75,8.05,14.62,12.95,97.05,31.0
+2025-12-04T05:54:13,2025-12-04 09:25:34,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,13.5,8.05,14.62,13.03,98.84,31.0
+2025-12-04T06:24:06,2025-12-04 09:25:38,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,13.25,8.05,14.62,13.18,98.47,31.0
+2025-12-04T06:54:01,2025-12-04 09:25:43,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,13.25,8.05,14.62,14.22,91.88,31.0
+2025-12-04T07:23:56,2025-12-04 09:25:47,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,15.0,8.05,14.62,15.55,89.05,31.0
+2025-12-04T07:53:53,2025-12-04 09:25:51,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.15,17.25,8.05,14.62,17.59,86.07,31.0
+2025-12-04T08:23:54,2025-12-04 09:25:56,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.15,20.25,8.05,14.62,17.45,86.55,31.0
+2025-12-04T08:53:55,2025-12-04 09:26:00,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.15,24.5,8.05,14.62,18.4,82.77,31.0
+2025-12-04T09:23:49,2025-12-04 09:26:04,Sin sesión,,,,14,LVAG-05,"Estación de Nivel de Agua para Línea Base, Aculeo",1.14,24.75,8.05,14.62,17.98,86.03,31.0

@@ -1,0 +1,25 @@
+fecha,fecha_insercion,id_sesion,sesion_descripcion,fecha_inicio,ubicacion,id_proyecto,codigo_interno,dispositivo_descripcion,A01NYUB [Distancia (m)],DS3231 [Grados celcius (°C)],Divisor de Voltaje [Voltaje (V)],LIQ-136 [Profundidad (m)],SHT40 [Grados celcius (°C)],SHT40 [Humedad (%)],SIM7600G [Intensidad señal telefónica (Adimensional)]
+2025-12-03T21:39:43,2025-12-04 09:08:50,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,24.75,7.89,0.7,23.63,64.69,15.0
+2025-12-03T22:09:33,2025-12-04 09:08:54,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,23.5,7.89,0.7,22.89,65.97,15.0
+2025-12-03T22:39:24,2025-12-04 09:08:58,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,22.5,7.89,0.7,22.31,66.04,15.0
+2025-12-03T23:09:16,2025-12-04 09:09:02,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,22.0,7.89,0.7,21.92,64.63,15.0
+2025-12-03T23:39:08,2025-12-04 09:09:07,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,21.5,7.88,0.7,21.96,67.26,15.0
+2025-12-04T00:09:00,2025-12-04 09:09:11,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,21.0,7.86,0.7,21.33,71.87,15.0
+2025-12-04T00:38:52,2025-12-04 09:09:16,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,20.75,7.87,0.7,21.02,72.47,15.0
+2025-12-04T01:08:44,2025-12-04 09:09:20,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,20.25,7.86,0.7,19.93,68.5,15.0
+2025-12-04T01:38:38,2025-12-04 09:09:24,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,19.75,7.87,0.7,19.75,72.72,15.0
+2025-12-04T02:08:30,2025-12-04 09:09:29,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,19.25,7.85,0.7,19.16,68.21,15.0
+2025-12-04T02:38:21,2025-12-04 09:09:33,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,18.75,7.86,0.7,18.49,72.05,15.0
+2025-12-04T03:08:13,2025-12-04 09:09:37,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,18.75,7.84,0.7,18.88,71.05,15.0
+2025-12-04T03:38:06,2025-12-04 09:09:42,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,18.75,7.84,0.7,18.52,73.48,15.0
+2025-12-04T04:07:57,2025-12-04 09:09:46,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,18.25,7.86,0.7,18.31,74.77,15.0
+2025-12-04T04:37:50,2025-12-04 09:09:50,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,18.0,7.85,0.7,17.92,75.44,15.0
+2025-12-04T05:07:43,2025-12-04 09:09:54,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,17.5,7.84,0.7,17.05,78.13,15.0
+2025-12-04T05:37:36,2025-12-04 09:09:59,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,17.0,7.85,0.7,17.36,81.5,15.0
+2025-12-04T06:07:28,2025-12-04 09:10:03,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,16.5,7.84,0.7,16.12,79.45,15.0
+2025-12-04T06:37:19,2025-12-04 09:10:07,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,16.25,7.83,0.7,16.35,79.13,15.0
+2025-12-04T07:07:15,2025-12-04 09:10:12,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.23,18.75,7.86,0.7,18.44,72.96,15.0
+2025-12-04T07:37:22,2025-12-04 09:10:16,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.24,25.0,7.83,0.7,21.11,66.59,15.0
+2025-12-04T08:07:28,2025-12-04 09:10:20,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.24,31.5,7.89,0.7,22.92,63.6,15.0
+2025-12-04T08:37:29,2025-12-04 09:10:25,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.24,36.25,7.91,0.7,24.82,57.47,15.0
+2025-12-04T09:07:29,2025-12-04 09:10:29,Sin sesión,,,,14,LVAG-02,"Estación de Nivel de Agua para Línea Base, Batuco",1.24,39.5,7.91,0.7,25.64,54.41,15.0

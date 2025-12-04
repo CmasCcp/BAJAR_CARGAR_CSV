@@ -113,15 +113,29 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
             
             # 1. Verificar si hay última fecha en config
             if 'ultima_fecha' in dispositivo:
-                ultima_fecha = datetime.strptime(dispositivo['ultima_fecha'], '%Y-%m-%d')
-                fecha_inicio = (ultima_fecha + timedelta(days=1)).strftime('%Y-%m-%d')
+                # Manejar ambos formatos de fecha (con y sin hora)
+                fecha_str = dispositivo['ultima_fecha']
+                try:
+                    # Intentar formato con hora primero
+                    ultima_fecha = datetime.strptime(fecha_str, '%Y-%m-%dT%H:%M:%S')
+                except ValueError:
+                    # Si falla, usar formato solo fecha
+                    ultima_fecha = datetime.strptime(fecha_str, '%Y-%m-%d')
+                fecha_inicio = (ultima_fecha).strftime('%Y-%m-%d')
+                # fecha_inicio = (ultima_fecha + timedelta(days=1)).strftime('%Y-%m-%d')
                 print(f"📅 Última fecha en config: {dispositivo['ultima_fecha']}")
                 print(f"📅 Iniciando desde el día siguiente: {fecha_inicio}")
             else:
                 # 2. Buscar última fecha en archivos CSV existentes en la carpeta del dispositivo
                 ultima_fecha_csv = obtener_ultima_fecha_csv(codigo_interno, dispositivo_folder)
                 if ultima_fecha_csv:
-                    ultima_fecha = datetime.strptime(ultima_fecha_csv, '%Y-%m-%d')
+                    # Manejar ambos formatos de fecha (con y sin hora)
+                    try:
+                        # Intentar formato con hora primero
+                        ultima_fecha = datetime.strptime(ultima_fecha_csv, '%Y-%m-%dT%H:%M:%S')
+                    except ValueError:
+                        # Si falla, usar formato solo fecha
+                        ultima_fecha = datetime.strptime(ultima_fecha_csv, '%Y-%m-%d')
                     fecha_inicio = (ultima_fecha + timedelta(days=1)).strftime('%Y-%m-%d')
                     print(f"📅 Última fecha encontrada en CSV: {ultima_fecha_csv}")
                     print(f"📅 Iniciando desde el día siguiente: {fecha_inicio}")
@@ -207,7 +221,7 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                         # Actualizar la última fecha procesada
                         ultima_fecha_paquete = df_paquete[col_fecha].max()
                         if pd.notna(ultima_fecha_paquete):
-                            fecha_str = ultima_fecha_paquete.strftime('%Y-%m-%d')
+                            fecha_str = ultima_fecha_paquete.strftime('%Y-%m-%dT%H:%M:%S')
                             if ultima_fecha_procesada is None or fecha_str > ultima_fecha_procesada:
                                 ultima_fecha_procesada = fecha_str
                                 print(f"📅 Última fecha actualizada: {ultima_fecha_procesada}")
