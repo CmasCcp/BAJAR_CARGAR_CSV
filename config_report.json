@@ -2,50 +2,50 @@
     {
         "proyecto": 13,
         "codigo_interno": "AGUA-01",
-        "fecha_inicio": "2025-11-01",
-        "fecha_fin": "2025-11-30",
+        "fecha_inicio": "2025-12-01",
+        "fecha_fin": "2025-12-31",
         "titulo": "Caren"
     },
     {
         "proyecto": 13,
         "codigo_interno": "AGUA-02",
-        "fecha_inicio": "2025-11-01",
-        "fecha_fin": "2025-11-30",
+        "fecha_inicio": "2025-12-01",
+        "fecha_fin": "2025-12-31",
         "titulo": "Trapiche"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-01",
-        "fecha_inicio": "2025-11-01",
-        "fecha_fin": "2025-11-30",
+        "fecha_inicio": "2025-12-01",
+        "fecha_fin": "2025-12-31",
         "titulo": "Yerba Loca"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-02",
-        "fecha_inicio": "2025-11-01",
-        "fecha_fin": "2025-11-30",
+        "fecha_inicio": "2025-12-01",
+        "fecha_fin": "2025-12-31",
         "titulo": "Batuco"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-03",
-        "fecha_inicio": "2025-11-01",
-        "fecha_fin": "2025-11-30",
+        "fecha_inicio": "2025-12-01",
+        "fecha_fin": "2025-12-31",
         "titulo": "Caren"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-04",
-        "fecha_inicio": "2025-11-01",
-        "fecha_fin": "2025-11-30",
+        "fecha_inicio": "2025-12-01",
+        "fecha_fin": "2025-12-31",
         "titulo": "Trapiche"
     },
     {
         "proyecto": 14,
         "codigo_interno": "LVAG-05",
-        "fecha_inicio": "2025-11-01",
-        "fecha_fin": "2025-11-30",
+        "fecha_inicio": "2025-12-01",
+        "fecha_fin": "2025-12-31",
         "titulo": "Aculeo"
     }
 ]
