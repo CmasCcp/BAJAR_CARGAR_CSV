@@ -121,8 +121,8 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                 except ValueError:
                     # Si falla, usar formato solo fecha
                     ultima_fecha = datetime.strptime(fecha_str, '%Y-%m-%d')
-                fecha_inicio = (ultima_fecha).strftime('%Y-%m-%d')
-                # fecha_inicio = (ultima_fecha + timedelta(days=1)).strftime('%Y-%m-%d')
+                fecha_inicio = (ultima_fecha).strftime('%Y-%m-%dT%H:%M:%S')
+                fecha_inicio_carpeta = (ultima_fecha).strftime('%Y-%m-%d')
                 print(f"📅 Última fecha en config: {dispositivo['ultima_fecha']}")
                 print(f"📅 Iniciando desde el día siguiente: {fecha_inicio}")
             else:
@@ -136,7 +136,8 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                     except ValueError:
                         # Si falla, usar formato solo fecha
                         ultima_fecha = datetime.strptime(ultima_fecha_csv, '%Y-%m-%d')
-                    fecha_inicio = (ultima_fecha + timedelta(days=1)).strftime('%Y-%m-%d')
+                    fecha_inicio = (ultima_fecha + timedelta(days=1)).strftime('%Y-%m-%dT%H:%M:%S')
+                    fecha_inicio_carpeta = (ultima_fecha + timedelta(days=1)).strftime('%Y-%m-%d')
                     print(f"📅 Última fecha encontrada en CSV: {ultima_fecha_csv}")
                     print(f"📅 Iniciando desde el día siguiente: {fecha_inicio}")
                 else:
@@ -145,7 +146,7 @@ def obtener_datos_desde_api(config_path='config.json', output_folder=LOCAL_FOLDE
                     print(f"📅 No hay datos previos, iniciando desde: {fecha_inicio}")
             
             # Crear carpeta específica para esta fecha de inicio
-            fecha_folder = os.path.join(dispositivo_folder, fecha_inicio)
+            fecha_folder = os.path.join(dispositivo_folder, fecha_inicio_carpeta)
             os.makedirs(fecha_folder, exist_ok=True)
             print(f"📅 Carpeta de fecha: {fecha_folder}")
 
